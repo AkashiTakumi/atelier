@@ -34,10 +34,10 @@
 
 ## GUI紙芝居
 ### 入力画面
-<img src="gamen1.png">
+<img src="img/usecase01_1.PNG">
 
 ### 確認画面
-<img src="gamen2.png">
+<img src="img/usecase01_2.PNG">
 
 
 
