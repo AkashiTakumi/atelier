@@ -15,4 +15,4 @@
 2. 管理者は,メール通知設定の変更を行う
 ## GUI紙芝居
 ### 管理者画面
-なし
+<img src="img\Administrator_interface.jpg">

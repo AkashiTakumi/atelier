@@ -14,4 +14,4 @@
 2. システムに登録されているユーザ名・メールアドレス一覧の画面が表示される
 ## GUI紙芝居
 ### 管理者画面
-なし
+<img src="img\Administrator_interface.jpg">
