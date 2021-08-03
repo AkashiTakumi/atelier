@@ -1,3 +1,4 @@
+package jp.kobe_u.cs.daikibo.cms_poc.repository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
