@@ -1,6 +1,6 @@
-package jp.kobeu.cs.daikibo.cms_poc.dto;
+package jp.kobe_u.cs.daikibo.cms_poc.dto;
 
-import jp.kobeu.cs.daikibo.cms_poc.entity.Comic;
+import jp.kobe_u.cs.daikibo.cms_poc.entity.Comic;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

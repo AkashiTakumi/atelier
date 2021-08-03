@@ -1,14 +1,14 @@
-package jp.kobeu.cs.daikibo.cms_poc.service;
+package jp.kobe_u.cs.daikibo.cms_poc.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import jp.kobeu.cs.daikibo.cms_poc.dto.ComicDto;
-import jp.kobeu.cs.daikibo.cms_poc.entity.Comic;
-import jp.kobeu.cs.daikibo.cms_poc.exception.ComicException;
-import jp.kobeu.cs.daikibo.cms_poc.repository.ComicReposotory;
+import jp.kobe_u.cs.daikibo.cms_poc.dto.ComicDto;
+import jp.kobe_u.cs.daikibo.cms_poc.entity.Comic;
+import jp.kobe_u.cs.daikibo.cms_poc.exception.ComicException;
+import jp.kobe_u.cs.daikibo.cms_poc.repository.ComicReposotory;
 
 @Service
 public class ComicService {
@@ -32,6 +32,18 @@ public class ComicService {
             return crepo.save(dto.toEntity());
         } else {
             return crepo.save(dto.toEntity());
+        }
+    }
+
+    /**
+     * 漫画削除用メソッド
+     * @param cid
+     */
+    public void deleteComic(Long cid) {
+        if (crepo.existsById(cid)) {
+            crepo.deleteById(cid);
+        } else {
+            throw new ComicException(ComicException.NO_SUCH_COMIC, "such comic not existed!");
         }
     }
 

@@ -1,4 +1,4 @@
-package jp.kobeu.cs.daikibo.cms_poc.exception;
+package jp.kobe_u.cs.daikibo.cms_poc.exception;
 
 public class ComicException extends RuntimeException{
     public static final int COMIC_ALREADY_EXISTS = 101;

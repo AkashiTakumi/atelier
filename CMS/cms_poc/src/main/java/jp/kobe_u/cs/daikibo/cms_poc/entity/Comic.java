@@ -1,4 +1,4 @@
-package jp.kobeu.cs.daikibo.cms_poc.entity;
+package jp.kobe_u.cs.daikibo.cms_poc.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
