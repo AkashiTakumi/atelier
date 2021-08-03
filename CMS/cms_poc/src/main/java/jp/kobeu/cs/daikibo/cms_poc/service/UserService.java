@@ -7,6 +7,9 @@ public class UserService {
     @Autowired
     UserRepository repo; // レポジトリ
 
+    public User userRegister(userRegisterDto dto) {
+        
+    }
 
     public List<User> showAllUser() {
         Iterable<User> found = repo.findAll();
