@@ -1,4 +1,4 @@
-package jp.kobeu.cs.daikibo.cms_poc;
+package jp.kobe_u.cs.daikibo.cms_poc;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
