@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CMS | 管理者画面</title>
+</head>
+
+<body>
+    <header>
+        <h1>管理者画面</h1>
+    </header>
+    <main>
+        <header>
+            <h2>
+            登録ユーザ情報一覧
+            </h2>
+        </header>
+        <table>
+            <tr>
+                <th>
+                    uid
+                </th>
+                <th>
+                    username
+                </th>
+                <th>
+                    email
+                </th>
+            </tr>
+            <tr th:each="user: ${userList}">
+                <td>[[${user.uid}]]</td>
+                <td>[[${user.username}]]</td>
+                <td>[[${user.email}]]</td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <form role="form" th:action="@{/user/register}" th:object="${userForm}" method="post">
+                        <input type="submit" value="新規作成" />
+                        <input type="text" required th:field="*{username}"/>
+                        <input type="text" required th:field="*{email}"/>
+                    </form>
+                </td>
+            </tr>
+        </table>
+        <footer>
+            
+        </footer>
+
+    </main>
+    
+
+</body>
+
+</html>
