@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class ComicController {
@@ -21,24 +22,23 @@ public class ComicController {
     }
 
     @GetMapping("/read")
-    String showGomicCheckPage(Model model) {
+    String showComicCheckPage(Model model) {
 
     }
 
     @PostMapping("/read")
-    void buy(Long cid){
+    String buy(Long cid, Model model){
 
     }
 
     @PostMapping("/read")
-    void cancel(Long cid) {
+    String cancel(Long cid, Model model) {
 
     }
 
-    /* 分からん */
-    void comicRegister() {
+    @PostMapping("/read")
+    String comicRegister(@RequestParam String title, Model model) {
 
     }
-
 
 }
