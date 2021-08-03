@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import jp.kobe_u.cs.daikibo.cms_poc.dto.UserResisterDto;
 import jp.kobe_u.cs.daikibo.cms_poc.entity.User;
@@ -26,7 +27,7 @@ public class UserController {
         return "user_list";
     }
 
-    @GetMapping("/user/register")
+    @PostMapping("/user/register")
     String userRegister(@ModelAttribute("userForm") UserForm form, Model model){
         // dto
         UserResisterDto udto = new UserResisterDto();
