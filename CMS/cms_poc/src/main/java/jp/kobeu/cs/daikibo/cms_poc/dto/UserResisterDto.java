@@ -9,8 +9,14 @@ public class UserResistorDto {
     String username;
     String email;
 
-    public UserResister name() {
-        
+    public UserResister toEntity() {
+        User user = new User();
+
+        user.setUid(uid);
+        user.setUsername(username);
+        user.setEmail(email);
+
+        return user;
     }
 }
 
