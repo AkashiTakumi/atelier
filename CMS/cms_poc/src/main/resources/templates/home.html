@@ -36,6 +36,9 @@
                 <th>
                     undo
                 </th>
+                <th>
+                    del
+                </th>
             </tr>
             <tr th:each="Comic: ${comicList}">
                 <td>[[${Comic.cid}]]</td>
@@ -49,6 +52,11 @@
                 <td>
                     <form th:action="@{/cancel/{uid}(uid=${uid},cid=${Comic.cid})}" method="post">
                         <input class="submit-input-btn" type="submit" value="undo"></button>
+                    </form>
+                </td>
+                <td>
+                    <form th:action="@{/deletecomic/{uid}(uid=${uid},cid=${Comic.cid})}" method="post">
+                        <input class="submit-input-btn" type="submit" value="del"></button>
                     </form>
                 </td>
             </tr>
