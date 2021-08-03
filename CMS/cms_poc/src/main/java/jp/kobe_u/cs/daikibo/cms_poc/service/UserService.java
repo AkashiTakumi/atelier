@@ -1,14 +1,21 @@
 package jp.kobe_u.cs.daikibo.cms_poc.service;
+import java.util.ArrayList;
 import java.util.List;
-import jp.kobeu.cs.daikibo.cms_poc.entity.User;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import jp.kobe_u.cs.daikibo.cms_poc.dto.UserResisterDto;
+import jp.kobe_u.cs.daikibo.cms_poc.entity.User;
+import jp.kobe_u.cs.daikibo.cms_poc.repository.UserRepository;
 
 @Service
 public class UserService {
     @Autowired
     UserRepository repo; // レポジトリ
 
-    public User userRegister(userRegisterDto dto) {
-        user = dto.toEntity();
+    public User userRegister(UserResisterDto dto) {
+        User user = dto.toEntity();
         return repo.save(user);
     }
 

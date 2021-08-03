@@ -1,8 +1,9 @@
 package jp.kobe_u.cs.daikibo.cms_poc.repository;
-import org.springframework.data.jpa.repository.Query;
+
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+
+import jp.kobe_u.cs.daikibo.cms_poc.entity.User;
 
 @Repository
 public interface UserRepository extends CrudRepository<User, Long>{
