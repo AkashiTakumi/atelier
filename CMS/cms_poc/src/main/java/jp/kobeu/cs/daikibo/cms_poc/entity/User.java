@@ -11,12 +11,12 @@ import lombok.Data;
 
 @Data
 @Entity
-public class Tsubuyaki {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id; //つぶやきエンティティの識別子
-    String name;    //名前
-    String mail; //コメント
+    Long id;
+    String name;    
+    String mail; 
     @Temporal(TemporalType.TIMESTAMP)
-    Date createdAt; //作成日時
+    Date createdAt; 
 }
