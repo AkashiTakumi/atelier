@@ -31,6 +31,7 @@ public class ComicController {
     @GetMapping("/read/{uid}")
     public String showComicList(@PathVariable Long uid ,Model model) {
         List<Comic> list = cs.getComicList(uid);
+        model.addAttribute("uid", uid);
         model.addAttribute("comicList", list);
         model.addAttribute("comicRegisterForm", new ComicRegisterForm());
         return "home";
