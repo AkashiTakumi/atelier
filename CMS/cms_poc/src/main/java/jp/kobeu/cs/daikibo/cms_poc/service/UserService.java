@@ -8,7 +8,8 @@ public class UserService {
     UserRepository repo; // レポジトリ
 
     public User userRegister(userRegisterDto dto) {
-        
+        user = dto.toEntity();
+        return repo.save(user);
     }
 
     public List<User> showAllUser() {
