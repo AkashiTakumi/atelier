@@ -35,4 +35,8 @@ public class UserService {
         User u = repo.findByEmail(email);
         return u;
     }
+
+    public void deleteUser(Long uid){
+        repo.deleteById(uid);
+    }
 }
