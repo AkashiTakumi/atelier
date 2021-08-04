@@ -25,4 +25,14 @@ public class UserService {
         found.forEach(list::add);
         return list;  
     }
+
+    /**
+     * ユーザを取得する (R)
+     * @param email
+     * @return
+     */
+    public User getMember(String email) {
+        User u = repo.findByEmail(email);
+        return u;
+    }
 }

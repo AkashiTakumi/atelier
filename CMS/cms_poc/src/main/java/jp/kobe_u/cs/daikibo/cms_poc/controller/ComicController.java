@@ -1,3 +1,4 @@
+
 package jp.kobe_u.cs.daikibo.cms_poc.controller;
 
 import java.util.List;
@@ -13,13 +14,44 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import jp.kobe_u.cs.daikibo.cms_poc.dto.ComicDto;
 import jp.kobe_u.cs.daikibo.cms_poc.entity.Comic;
+import jp.kobe_u.cs.daikibo.cms_poc.entity.User;
 import jp.kobe_u.cs.daikibo.cms_poc.service.ComicService;
+import jp.kobe_u.cs.daikibo.cms_poc.service.UserService;
 
 @Controller
 public class ComicController {
 
     @Autowired
     ComicService cs;
+    @Autowired
+    UserService us;
+
+    /**
+     * ログイン画面の表示
+     * @param uid
+     * @param model
+     * @return
+     */
+
+    @GetMapping("/login")
+    public String showLogin(Model model) {
+        model.addAttribute("userForm", new UserForm());
+        return "login";
+    }
+
+    /**
+     * ログイン
+     * 
+     * @param uid
+     * @param model
+     * @return
+     */
+
+    @GetMapping("/login_check")
+    public String login(@ModelAttribute UserForm userForm, Model model) {
+        User u = us.getMember(userForm.getEmail());
+        return "redirect:/read/"+u.getUid();
+    }
 
     /**
      * 漫画管理画面の表示
@@ -28,9 +60,11 @@ public class ComicController {
      * @param model
      * @return
      */
+
     @GetMapping("/read/{uid}")
     public String showComicList(@PathVariable Long uid ,Model model) {
         List<Comic> list = cs.getComicList(uid);
+        model.addAttribute("uid", uid);
         model.addAttribute("comicList", list);
         model.addAttribute("comicRegisterForm", new ComicRegisterForm());
         return "home";

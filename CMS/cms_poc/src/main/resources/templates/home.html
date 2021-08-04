@@ -1,13 +1,85 @@
 <!DOCTYPE html>
 <html lang="ja" xmins:th="http://ww.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ComicManagementServise</title>
+    <link rel="stylesheet" href="/admin.css">
 </head>
+
 <body>
-    <h1>漫画管理サービス</h1>
-    
+    <header>
+        <h1>ホーム画面</h1>
+    </header>
+    <main th:objec>
+        <header>
+            <h2>
+                登録漫画一覧
+            </h2>
+        </header>
+        <table>
+            <tr>
+                <th>
+                    cid
+                </th>
+                <th>
+                    title
+                </th>
+                <th>
+                    No.
+                </th>
+                <th>
+                    buy latest
+                </th>
+                <th>
+                    undo
+                </th>
+                <th>
+                    del
+                </th>
+            </tr>
+            <tr th:each="Comic: ${comicList}">
+                <td>[[${Comic.cid}]]</td>
+                <td>[[${Comic.title}]]</td>
+                <td>[[${Comic.volume}]]</td>
+                <td>
+                    <form th:action="@{/buy/{uid}(uid=${uid},cid=${Comic.cid})}" method="post">
+                        <input class="submit-input-btn" type="submit" value="buy" ></input>
+                    </form>
+                </td>
+                <td>
+                    <form th:action="@{/cancel/{uid}(uid=${uid},cid=${Comic.cid})}" method="post">
+                        <input class="submit-input-btn" type="submit" value="undo"></button>
+                    </form>
+                </td>
+                <td>
+                    <form th:action="@{/deletecomic/{uid}(uid=${uid},cid=${Comic.cid})}" method="post">
+                        <input class="submit-input-btn" type="submit" value="del"></button>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <form role="form" th:action="@{/createcomic/{uid}(uid=${uid})}" th:object="${comicRegisterForm}"
+                    method="post">
+                    <td>
+                        <input class="submit-input" type="submit" value="新規作成" />
+                    </td>
+                    <td>
+                        <input type="text" required th:field="*{title}" />
+                    </td>
+                </form>
+            </tr>
+
+        </table>
+        <footer>
+
+        </footer>
+
+    </main>
+
+
 </body>
+
 </html>
