@@ -13,7 +13,7 @@
     <header>
         <h1>ホーム画面</h1>
     </header>
-    <main th:objec>
+    <main>
         <header>
             <h2>
                 登録漫画一覧
@@ -46,7 +46,7 @@
                 <td>[[${Comic.volume}]]</td>
                 <td>
                     <form th:action="@{/buy/{uid}(uid=${uid},cid=${Comic.cid})}" method="post">
-                        <input class="submit-input-btn" type="submit" value="buy" ></input>
+                        <input class="submit-input-btn" type="submit" value="buy"></input>
                     </form>
                 </td>
                 <td>
