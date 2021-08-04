@@ -81,3 +81,7 @@ table td {
     color: #000066;
     background: white;
 }
+
+a {
+    text-decoration: none;
+}

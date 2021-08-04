@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import jp.kobe_u.cs.daikibo.cms_poc.dto.UserResisterDto;
@@ -34,6 +35,12 @@ public class UserController {
         udto.setUsername(form.username);
         udto.setEmail(form.email);
         us.userRegister(udto);
+        return "redirect:/user";
+    }
+
+    @PostMapping("user/delete/{uid}")
+    String userDelete(@PathVariable Long uid, Model model){
+        us.deleteUser(uid);
         return "redirect:/user";
     }
 

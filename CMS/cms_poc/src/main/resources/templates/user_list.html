@@ -32,11 +32,20 @@
                 <th>
                     email
                 </th>
+                <th>
+                    delete
+                </th>
             </tr>
             <tr th:each="user: ${userList}">
                 <td>[[${user.uid}]]</td>
                 <td>[[${user.username}]]</td>
                 <td>[[${user.email}]]</td>
+                <td>
+                    <form th:action="@{/user/delete/{uid}(uid=${user.uid})}" method="post">
+                        <input class="submit-input-btn" type="submit" value="del"></input>
+                    </form>
+                </td>
+
             </tr>
             <tr>
                 <form role="form" th:action="@{/user/register}" th:object="${userForm}" method="post">
@@ -49,11 +58,14 @@
                     <td>
                         <input type="email" required th:field="*{email}" />
                     </td>
+
                 </form>
             </tr>
         </table>
         <footer>
-
+            <p>
+                <a href="/login">システムログインページへ進む</a>
+            </p>
         </footer>
 
     </main>
