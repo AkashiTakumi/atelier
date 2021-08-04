@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import jp.kobe_u.cs.daikibo.cms_poc.dto.ComicDto;
+import jp.kobe_u.cs.daikibo.cms_poc.dto.UserResisterDto;
 import jp.kobe_u.cs.daikibo.cms_poc.entity.Comic;
 import jp.kobe_u.cs.daikibo.cms_poc.entity.User;
 import jp.kobe_u.cs.daikibo.cms_poc.service.ComicService;
@@ -50,6 +51,16 @@ public class ComicController {
     @GetMapping("/login_check")
     public String login(@ModelAttribute UserForm userForm, Model model) {
         User u = us.getMember(userForm.getEmail());
+        return "redirect:/read/"+u.getUid();
+    }
+
+    @PostMapping("/signup")
+    public String signup(@ModelAttribute UserForm form, Model model){
+        UserResisterDto udto = new UserResisterDto();
+        udto.setUsername(form.username);
+        udto.setEmail(form.email);
+        us.userRegister(udto);
+        User u = us.getMember(form.email);
         return "redirect:/read/"+u.getUid();
     }
 

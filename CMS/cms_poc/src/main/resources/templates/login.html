@@ -1,41 +1,79 @@
 <!DOCTYPE html>
 <html lang="ja" xmins:th="http://ww.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CMS | Login</title>
+    <link rel="stylesheet" href="/admin.css">
 </head>
+
 <body>
     <header>
         <h1>ログイン画面</h1>
     </header>
     <main>
-        <table>
-            <tr>
-                <th>
-                </th>
-                <th>
-                    username
-                </th>
-                <th>
-                    email
-                </th>
-            </tr>
-            <tr>
-                <form role="form" th:action="@{/login_check}" th:object="${userForm}" method="get">
-                    <td>
-                        <input class="submit-input" type="submit" value="ログイン"/>
-                    </td>
-                    <td>
-                        <input type="text" required th:field="*{username}" />
-                    </td>
-                    <td>
-                        <input type="email" required th:field="*{email}" />
-                    </td>
-                </form>
-            </tr>
-        </table>
+        <div class="login">
+            <h2>
+                login
+            </h2>
+            <table>
+                <tr>
+                    <th>
+                    </th>
+                    <th>
+                        username
+                    </th>
+                    <th>
+                        email
+                    </th>
+                </tr>
+                <tr>
+                    <form role="form" th:action="@{/login_check}" th:object="${userForm}" method="get">
+                        <td>
+                            <input class="submit-input" type="submit" value="ログイン" />
+                        </td>
+                        <td>
+                            <input type="text" required th:field="*{username}" />
+                        </td>
+                        <td>
+                            <input type="email" required th:field="*{email}" />
+                        </td>
+                    </form>
+                </tr>
+            </table>
+        </div>
+        <div class="signup">
+            <h2>
+                sign up
+            </h2>
+            <table>
+                <tr>
+                    <th>
+                    </th>
+                    <th>
+                        username
+                    </th>
+                    <th>
+                        email
+                    </th>
+                </tr>
+                <tr>
+                    <form role="form" th:action="@{/signup}" th:object="${userForm}" method="post">
+                        <td>
+                            <input class="submit-input" type="submit" value="サインアップ" />
+                        </td>
+                        <td>
+                            <input type="text" required th:field="*{username}" />
+                        </td>
+                        <td>
+                            <input type="email" required th:field="*{email}" />
+                        </td>
+                    </form>
+                </tr>
+            </table>
+        </div>
         <footer>
 
         </footer>
@@ -44,4 +82,5 @@
 
 
 </body>
+
 </html>

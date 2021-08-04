@@ -50,7 +50,19 @@ table td {
     background-color: aliceblue;
 }
 
-.submit-input-btn,
+.submit-input-btn {
+    display: inline-block;
+    border-radius: 5%;
+    font-size: 12pt;
+    text-align: center;
+    cursor: pointer;
+    padding: 12px 12px;
+    background: #000066;
+    color: white;
+    line-height: 1em;
+    border: 2px solid #000066;
+}
+
 .submit-input {
     display: inline-block;
     border-radius: 5%;
@@ -64,8 +76,8 @@ table td {
     transition: .3s;
     border: 2px solid #000066;
 }
-.submit-input:hover{
+
+.submit-input:hover {
     color: #000066;
     background: white;
 }
-
