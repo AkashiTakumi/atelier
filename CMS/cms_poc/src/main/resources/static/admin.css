@@ -1,0 +1,106 @@
+h1 {
+    padding: 1rem 2rem;
+    color: #fff;
+    background: #094;
+    -webkit-box-shadow: 5px 5px 0 #007032;
+    box-shadow: 5px 5px 0 #007032;
+}
+
+h2 {
+    position: relative;
+    display: inline-block;
+    padding: 1rem 2rem 1rem 4rem;
+    color: #fff;
+    border-radius: 100vh 0 0 100vh;
+    background: #fa4141;
+}
+
+h2:before {
+    position: absolute;
+    top: calc(50% - 7px);
+    left: 10px;
+    width: 14px;
+    height: 14px;
+    content: '';
+    border-radius: 50%;
+    background: #fff;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+}
+
+table th {
+    text-align: center;
+    padding: 7px 0;
+    border-right: solid 1px #ddd;
+    border-left: solid 1px #ddd;
+    width: 155px;
+    background-color: skyblue;
+}
+
+table td {
+    text-align: center;
+    padding: 7px 0;
+    border-right: solid 1px #ddd;
+    border-left: solid 1px #ddd;
+    width: 155px;
+    background-color: aliceblue;
+}
+
+.submit-input-btn {
+    display: inline-block;
+    border-radius: 5%;
+    font-size: 12pt;
+    text-align: center;
+    cursor: pointer;
+    padding: 12px 12px;
+    background: #000066;
+    color: white;
+    line-height: 1em;
+    border: 2px solid #000066;
+}
+
+.submit-input {
+    display: inline-block;
+    border-radius: 5%;
+    font-size: 12pt;
+    text-align: center;
+    cursor: pointer;
+    padding: 12px 12px;
+    background: #000066;
+    color: white;
+    line-height: 1em;
+    transition: .3s;
+    border: 2px solid #000066;
+}
+
+.submit-input:hover {
+    color: #000066;
+    background: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+.submit {
+    display: inline-block;
+    border-radius: 5%;
+    font-size: 6pt;
+    text-align: center;
+    cursor: pointer;
+    padding: 12px 12px;
+    background: #49484d;
+    color: white;
+    line-height: 1em;
+    transition: .3s;
+    border: 2px solid #49484d;
+}
+
+.submit:hover {
+    color: #49484d;
+    background: white;
+}

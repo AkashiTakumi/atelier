@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMS | 管理者画面</title>
+    <link rel="stylesheet" href="/admin.css">
+</head>
+
+<body>
+    <header>
+        <h1>管理者画面</h1>
+    </header>
+    <main>
+        <header>
+            <h2>
+                登録ユーザ情報一覧
+            </h2>
+        </header>
+        <table>
+            <tr>
+                <th>
+                    uid
+                </th>
+                <th>
+                    username
+                </th>
+                <th>
+                    email
+                </th>
+                <th>
+                    delete
+                </th>
+            </tr>
+            <tr th:each="user: ${userList}">
+                <td>[[${user.uid}]]</td>
+                <td>[[${user.username}]]</td>
+                <td>[[${user.email}]]</td>
+                <td>
+                    <form th:action="@{/user/delete/{uid}(uid=${user.uid})}" method="post">
+                        <input class="submit-input-btn" type="submit" value="del"></input>
+                    </form>
+                </td>
+
+            </tr>
+            <tr>
+                <form role="form" th:action="@{/user/register}" th:object="${userForm}" method="post">
+                    <td>
+                        <input class="submit-input" type="submit" value="新規作成" />
+                    </td>
+                    <td>
+                        <input type="text" required th:field="*{username}" />
+                    </td>
+                    <td>
+                        <input type="email" required th:field="*{email}" />
+                    </td>
+
+                </form>
+            </tr>
+        </table>
+        <footer>
+            <p>
+                <a href="/login">システムログインページへ進む</a>
+            </p>
+        </footer>
+
+    </main>
+
+
+</body>
+
+</html>
